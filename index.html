@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Solutions for Business</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#8E6FF7',secondary:'#1EDD00',dark:'#030C11',darklight:'#061822'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030C11;
+            color: white;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #fff 0%, #1EDD00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover:hover {
+            box-shadow: 0 0 20px rgba(30, 221, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1EDD00;
+        }
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(30, 221, 0, 0.2);
+            animation: float 15s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(30px);
+            }
+            50% {
+                transform: translateY(-60px) translateX(0);
+            }
+            75% {
+                transform: translateY(-30px) translateX(-30px);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="w-full px-6 py-4 flex items-center justify-between fixed top-0 z-50 bg-dark/80 backdrop-blur-md">
+        <div class="flex items-center">
+            <span class="text-2xl font-['Pacifico'] text-white">logo</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#features" class="text-white hover:text-secondary transition-colors">Features</a>
+            <a href="#solutions" class="text-white hover:text-secondary transition-colors">Solutions</a>
+            <a href="#advantages" class="text-white hover:text-secondary transition-colors">Advantages</a>
+            <a href="#testimonials" class="text-white hover:text-secondary transition-colors">Testimonials</a>
+        </div>
+        <div>
+            <button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/0a92a4a7f44338561d4f57a1acff80ca.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-dark to-dark/70"></div>
+        
+        <div class="floating-particles">
+            <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="width: 15px; height: 15px; top: 40%; left: 25%; animation-delay: 2s;"></div>
+            <div class="particle" style="width: 8px; height: 8px; top: 70%; left: 35%; animation-delay: 4s;"></div>
+            <div class="particle" style="width: 12px; height: 12px; top: 30%; left: 65%; animation-delay: 6s;"></div>
+            <div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 8s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 py-12">
+                <div class="lg:w-1/2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        Advanced <span class="text-secondary">AI Solutions</span> for Business Growth
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300">
+                        Transform your business with our intelligent AI ecosystem featuring Voice Generation, Chatbot Interface, and AI Decision Brain. Boost revenue, reduce costs, and enhance customer engagement.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap font-medium">
+                            Request Demo
+                        </button>
+                        <button class="border border-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/10 transition-all whitespace-nowrap font-medium">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-lg overflow-hidden shadow-2xl">
+                        <img src="https://public.readdy.ai/ai/img_res/b74b023efb7d48eb38db306540360a66.jpg" alt="AI Dashboard" class="w-full object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-darklight p-3 rounded-lg border border-secondary/30">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                            <span class="text-sm font-medium">AI-Powered Analysis Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 mt-16 mb-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-line-chart-line text-secondary ri-xl"></i>
+                    </div>
+                    <span class="text-gray-300">42% Revenue Growth</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-customer-service-2-line text-secondary ri-xl"></i>
+                    </div>
+                    <span class="text-gray-300">24/7 AI Support</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-shield-check-line text-secondary ri-xl"></i>
+                    </div>
+                    <span class="text-gray-300">99.9% Accuracy</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-user-settings-line text-secondary ri-xl"></i>
+                    </div>
+                    <span class="text-gray-300">Personalized Solutions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core AI Modalities Section -->
+    <section id="features" class="py-20 bg-darklight">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core <span class="text-secondary">AI Modalities</span></h2>
+                <p class="text-gray-300 max-w-3xl mx-auto">Discover the three powerful AI technologies that form the foundation of our business solution, working together to transform your operations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Voice Generation -->
+                <div class="bg-dark p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="ri-volume-up-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Voice Generation</h3>
+                    <p class="text-gray-300 mb-6">Our advanced voice synthesis technology creates natural, human-like speech that enhances customer engagement and provides a seamless communication experience.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Multi-language support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Emotional tone adaptation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Custom voice branding</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Chatbot Interface -->
+                <div class="bg-dark p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="ri-message-3-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Chatbot Interface</h3>
+                    <p class="text-gray-300 mb-6">Our intelligent conversational AI understands context, responds appropriately, and learns from interactions to provide increasingly personalized customer service.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Context-aware responses</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Seamless human handoff</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Omnichannel integration</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- AI Decision Brain -->
+                <div class="bg-dark p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="ri-brain-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">AI Decision Brain</h3>
+                    <p class="text-gray-300 mb-6">Our proprietary decision-making core analyzes data, identifies patterns, and makes intelligent recommendations while minimizing hallucination risks.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Advanced risk mitigation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Real-time decision support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            <span class="text-gray-300">Continuous learning system</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Enhancement Module -->
+    <section id="solutions" class="py-20 bg-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-10" style="background-image: url('https://public.readdy.ai/ai/img_res/31442eb6a9a0be8e3c0828ea4a0d1b4a.jpg'); background-size: cover; background-position: center;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="mb-6 inline-block">
+                        <span class="bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-medium">Sales Enhancement</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Intelligent <span class="text-secondary">Sales Enhancement</span> Module</h2>
+                    <p class="text-gray-300 mb-8">Our integrated sales enhancement module combines intelligent decision-making, AI-generated imagery, voice synthesis, and big-data recommendations to significantly boost your revenue opportunities.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-darklight p-6 rounded-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg">
+                                    <i class="ri-line-chart-line text-primary"></i>
+                                </div>
+                                <h4 class="font-medium">Revenue Growth</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm">Clients report an average <span class="text-secondary font-medium">37% increase</span> in conversion rates.</p>
+                        </div>
+                        
+                        <div class="bg-darklight p-6 rounded-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg">
+                                    <i class="ri-customer-service-2-line text-primary"></i>
+                                </div>
+                                <h4 class="font-medium">Customer Engagement</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm">Interaction time increased by <span class="text-secondary font-medium">42%</span> with AI assistance.</p>
+                        </div>
+                        
+                        <div class="bg-darklight p-6 rounded-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg">
+                                    <i class="ri-robot-line text-primary"></i>
+                                </div>
+                                <h4 class="font-medium">AI Recommendations</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm"><span class="text-secondary font-medium">89% accuracy</span> in predicting customer needs.</p>
+                        </div>
+                        
+                        <div class="bg-darklight p-6 rounded-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <h4 class="font-medium">Response Time</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm">Customer inquiries resolved <span class="text-secondary font-medium">5x faster</span> than human agents.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap font-medium">
+                        Explore Sales Solutions
+                    </button>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="bg-darklight p-1 rounded-lg border border-gray-800">
+                            <div class="relative rounded-lg overflow-hidden">
+                                <img src="https://public.readdy.ai/ai/img_res/c3dbd12a4b00dc82b0bd1d8e6ac43b51.jpg" alt="Sales Enhancement Module" class="w-full object-cover rounded-lg">
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -left-6 bg-darklight p-4 rounded-lg shadow-lg border border-gray-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center">
+                                    <i class="ri-pie-chart-line text-secondary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">Conversion Rate</div>
+                                    <div class="text-xl font-semibold flex items-center gap-1">
+                                        <span>37%</span>
+                                        <span class="text-secondary text-sm">↑ 12.4%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Decision Brain Section -->
+    <section class="py-20 bg-darklight">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="mb-6 inline-block">
+                        <span class="bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-medium">Risk Management</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">AI Decision Brain for <span class="text-secondary">Risk Management</span></h2>
+                    <p class="text-gray-300 mb-8">Our simulated decision-making brain mitigates AI hallucination risks and efficiently manages operational risks, especially within generative AI customer service chatbots.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg mt-1">
+                                <i class="ri-shield-check-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Hallucination Prevention</h4>
+                                <p class="text-gray-300 text-sm">Our AI Decision Brain uses multi-layered verification to ensure all AI-generated content is factual and accurate, reducing hallucination incidents by 97%.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg mt-1">
+                                <i class="ri-funds-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Operational Cost Reduction</h4>
+                                <p class="text-gray-300 text-sm">By automating decision processes and reducing error rates, businesses have reported operational cost reductions of up to 43% within the first six months.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded-lg mt-1">
+                                <i class="ri-database-2-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Continuous Learning</h4>
+                                <p class="text-gray-300 text-sm">Our system continuously learns from interactions, improving decision accuracy by approximately 0.5% every month after implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap font-medium">
+                        Explore Risk Management
+                    </button>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="relative bg-dark p-6 rounded-lg border border-gray-800">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h4 class="font-medium">AI Decision Accuracy Metrics</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-xs text-gray-400">Live Data</span>
+                            </div>
+                        </div>
+                        
+                        <div id="decision-chart" class="w-full h-64 mb-4"></div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-darklight p-3 rounded">
+                                <div class="text-xs text-gray-400 mb-1">Error Rate</div>
+                                <div class="text-lg font-semibold flex items-center gap-1">
+                                    <span>0.03%</span>
+                                    <span class="text-secondary text-xs">↓ 0.01%</span>
+                                </div>
+                            </div>
+                            <div class="bg-darklight p-3 rounded">
+                                <div class="text-xs text-gray-400 mb-1">Decision Speed</div>
+                                <div class="text-lg font-semibold flex items-center gap-1">
+                                    <span>12ms</span>
+                                    <span class="text-secondary text-xs">↑ 3ms</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Advantages -->
+    <section id="advantages" class="py-20 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Five Major <span class="text-secondary">Advantages</span></h2>
+                <p class="text-gray-300 max-w-3xl mx-auto">Our comprehensive AI solution delivers significant benefits across multiple business dimensions, driving growth and operational excellence.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Revenue Growth -->
+                <div class="bg-darklight p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                        <i class="ri-line-chart-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Enhanced Revenue Growth</h3>
+                    <p class="text-gray-300 mb-4">Intelligent sales insights drive substantial revenue increases through targeted recommendations and personalized customer interactions.</p>
+                    <div class="flex items-center gap-2 text-secondary">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-up-line"></i>
+                        </div>
+                        <span class="font-semibold">37% Average Increase</span>
+                    </div>
+                </div>
+                
+                <!-- Cost Reduction -->
+                <div class="bg-darklight p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                        <i class="ri-money-dollar-circle-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Operational Cost Reduction</h3>
+                    <p class="text-gray-300 mb-4">Automated customer interactions and streamlined processes dramatically reduce operational expenses across your organization.</p>
+                    <div class="flex items-center gap-2 text-secondary">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-line"></i>
+                        </div>
+                        <span class="font-semibold">43% Cost Savings</span>
+                    </div>
+                </div>
+                
+                <!-- Risk Control -->
+                <div class="bg-darklight p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                        <i class="ri-shield-check-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Superior Risk Control</h3>
+                    <p class="text-gray-300 mb-4">Our advanced AI decision framework minimizes errors and ensures reliable, consistent performance in all business operations.</p>
+                    <div class="flex items-center gap-2 text-secondary">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-line"></i>
+                        </div>
+                        <span class="font-semibold">97% Error Reduction</span>
+                    </div>
+                </div>
+                
+                <!-- User Engagement -->
+                <div class="bg-darklight p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                        <i class="ri-user-heart-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Exceptional User Engagement</h3>
+                    <p class="text-gray-300 mb-4">Realistic AI-generated visuals and voice interactions create compelling, memorable customer experiences that build loyalty.</p>
+                    <div class="flex items-center gap-2 text-secondary">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-up-line"></i>
+                        </div>
+                        <span class="font-semibold">68% Engagement Boost</span>
+                    </div>
+                </div>
+                
+                <!-- Personalization -->
+                <div class="bg-darklight p-8 rounded-lg border border-gray-800 card-hover transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                        <i class="ri-fingerprint-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Data-Driven Personalization</h3>
+                    <p class="text-gray-300 mb-4">Extensive big data analysis powers highly personalized recommendations that anticipate customer needs and preferences.</p>
+                    <div class="flex items-center gap-2 text-secondary">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-up-line"></i>
+                        </div>
+                        <span class="font-semibold">89% Recommendation Accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-darklight">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by <span class="text-secondary">Industry Leaders</span></h2>
+                <p class="text-gray-300 max-w-3xl mx-auto">See what our clients have to say about the transformative impact of our AI solutions on their businesses.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-dark p-8 rounded-lg border border-gray-800">
+                    <div class="flex items-center gap-1 mb-4 text-secondary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The AI Decision Brain has revolutionized our customer service operations. We've seen a 43% reduction in operational costs while improving customer satisfaction scores by 28%."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-medium">JD</span>
+                        </div>
+                        <div>
+                            <div class="font-medium">Jennifer Davis</div>
+                            <div class="text-sm text-gray-400">CTO, Global Finance Corp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark p-8 rounded-lg border border-gray-800">
+                    <div class="flex items-center gap-1 mb-4 text-secondary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The voice generation technology has transformed our customer interactions. The natural-sounding AI voices have increased engagement by 68% and significantly boosted our conversion rates."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-medium">RM</span>
+                        </div>
+                        <div>
+                            <div class="font-medium">Robert Mitchell</div>
+                            <div class="text-sm text-gray-400">CEO, TechInnovate Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark p-8 rounded-lg border border-gray-800">
+                    <div class="flex items-center gap-1 mb-4 text-secondary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The personalized recommendations from the AI system have been remarkably accurate. Our customers are finding exactly what they need, resulting in a 37% increase in average order value."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-medium">AK</span>
+                        </div>
+                        <div>
+                            <div class="font-medium">Alicia Kowalski</div>
+                            <div class="text-sm text-gray-400">CMO, Retail Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-8">
+                <div class="flex items-center">
+                    <i class="ri-microsoft-fill text-gray-400 ri-3x"></i>
+                </div>
+                <div class="flex items-center">
+                    <i class="ri-amazon-fill text-gray-400 ri-3x"></i>
+                </div>
+                <div class="flex items-center">
+                    <i class="ri-netflix-fill text-gray-400 ri-3x"></i>
+                </div>
+                <div class="flex items-center">
+                    <i class="ri-google-fill text-gray-400 ri-3x"></i>
+                </div>
+                <div class="flex items-center">
+                    <i class="ri-apple-fill text-gray-400 ri-3x"></i>
+                </div>
+                <div class="flex items-center">
+                    <i class="ri-ibm-fill text-gray-400 ri-3x"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://public.readdy.ai/ai/img_res/77e79b14cb68ab4c11f9c366261f4e54.jpg'); background-size: cover; background-position: center;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to <span class="text-secondary">Transform</span> Your Business?</h2>
+                <p class="text-gray-300 mb-8">Experience the power of our integrated AI solution and see how it can drive growth, reduce costs, and enhance customer engagement for your business.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap font-medium">
+                        Schedule a Demo
+                    </button>
+                    <button class="border border-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/10 transition-all whitespace-nowrap font-medium">
+                        Contact Sales
+                    </button>
+                </div>
+                
+                <div class="bg-darklight p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-6">Subscribe to Our Newsletter</h3>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Enter your email" class="bg-dark border-none text-white px-4 py-3 rounded w-full sm:w-auto flex-grow focus:ring-2 focus:ring-secondary">
+                        <button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap font-medium">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-4">Stay updated with the latest AI innovations and business insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darklight py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-['Pacifico'] text-white mb-4">logo</div>
+                    <p class="text-gray-400 mb-6">Advanced AI solutions for modern businesses, driving growth through intelligent technology.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Voice Generation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Chatbot Interface</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">AI Decision Brain</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sales Enhancement</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Risk Management</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">© 2025 logo. All rights reserved.</div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-visa-fill text-gray-400"></i>
+                        </div>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-gray-400"></i>
+                        </div>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-paypal-fill text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 text-sm">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        // Initialize the chart
+        const chartElement = document.getElementById('decision-chart');
+        const chart = echarts.init(chartElement);
+        
+        // Chart configuration
+        const option = {
+            animation: false,
+            tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            grid: {
+                top: 10,
+                right: 10,
+                bottom: 30,
+                left: 50
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.2)'
+                    }
+                },
+                axisLabel: {
+                    color: 'rgba(255, 255, 255, 0.6)'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Accuracy (%)',
+                nameTextStyle: {
+                    color: 'rgba(255, 255, 255, 0.6)'
+                },
+                min: 95,
+                max: 100,
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.2)'
+                    }
+                },
+                axisLabel: {
+                    color: 'rgba(255, 255, 255, 0.6)'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Decision Accuracy',
+                    type: 'line',
+                    data: [96.8, 97.2, 97.5, 98.1, 98.4, 98.7, 99.1, 99.5, 99.7],
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: {
+                        width: 3,
+                        color: 'rgba(87, 181, 231, 1)'
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {
+                                offset: 0,
+                                color: 'rgba(87, 181, 231, 0.3)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgba(87, 181, 231, 0.1)'
+                            }
+                        ])
+                    }
+                },
+                {
+                    name: 'Industry Average',
+                    type: 'line',
+                    data: [95.2, 95.4, 95.7, 95.9, 96.1, 96.3, 96.5, 96.7, 96.9],
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: {
+                        width: 2,
+                        type: 'dashed',
+                        color: 'rgba(252, 141, 98, 1)'
+                    }
+                }
+            ]
+        };
+        
+        // Apply configuration
+        chart.setOption(option);
+        
+        // Responsive chart
+        window.addEventListener('resize', function() {
+            chart.resize();
+        });
+    </script>
+</body>
+</html>
